@@ -1,13 +1,14 @@
-/* Reset some defaults */
+/* Reset and base styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
 }
 
 body {
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
+    scroll-behavior: smooth;
     color: #333;
 }
 
@@ -18,27 +19,31 @@ body {
     margin: auto;
 }
 
-/* Header */
+/* Header / Navbar */
 header {
-    background: #007bff;
-    color: #fff;
-    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    background: rgba(0, 123, 255, 0.9);
+    padding: 15px 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header h1 {
-    display: inline-block;
-}
-
-header nav {
-    float: right;
+    color: #fff;
 }
 
 header nav ul {
     list-style: none;
+    display: flex;
 }
 
 header nav ul li {
-    display: inline;
     margin-left: 20px;
 }
 
@@ -46,87 +51,138 @@ header nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #ffd700;
 }
 
 /* Hero Section */
 .hero {
-    background: #f4f4f4;
-    padding: 80px 0;
+    height: 100vh;
+    background: url('images/hero.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero-overlay {
+    background-color: rgba(0,0,0,0.6);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
     text-align: center;
+    color: #fff;
+    max-width: 700px;
 }
 
-.hero h2 {
-    font-size: 2.5rem;
+.hero-content h2 {
+    font-size: 2.8rem;
     margin-bottom: 20px;
 }
 
-.hero p {
+.hero-content p {
     font-size: 1.2rem;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .btn {
-    background: #007bff;
-    color: #fff;
-    padding: 10px 20px;
+    background: #ffd700;
+    color: #333;
+    padding: 12px 30px;
     text-decoration: none;
-    border-radius: 5px;
+    font-weight: bold;
+    border-radius: 30px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #fff;
 }
 
 /* Services Section */
 .services {
-    padding: 60px 0;
+    padding: 100px 0 60px 0;
     text-align: center;
 }
 
 .service-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
     margin-top: 40px;
 }
 
 .service-card {
     background: #f4f4f4;
-    padding: 20px;
+    padding: 30px;
     border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.service-card i {
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
 }
 
 /* About Section */
 .about {
     background: #e2e2e2;
-    padding: 60px 0;
+    padding: 100px 0;
     text-align: center;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: auto;
 }
 
 /* Contact Section */
 .contact {
-    padding: 60px 0;
+    padding: 100px 0;
     text-align: center;
 }
 
 .contact form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
     max-width: 500px;
     margin: auto;
+    gap: 15px;
 }
 
 .contact input,
 .contact textarea {
-    padding: 10px;
+    padding: 12px;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 8px;
+    font-size: 1rem;
 }
 
 .contact button {
-    padding: 10px;
+    padding: 12px;
     background: #007bff;
     color: #fff;
+    font-weight: bold;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.contact button:hover {
+    background: #0056b3;
 }
 
 /* Footer */
@@ -135,4 +191,25 @@ footer {
     color: #fff;
     text-align: center;
     padding: 20px 0;
+}
+
+/* Responsive adjustments */
+@media(max-width:768px){
+    header nav ul {
+        flex-direction: column;
+        background: rgba(0,123,255,0.9);
+        position: absolute;
+        right: 0;
+        top: 60px;
+        width: 100%;
+        display: none;
+    }
+
+    header nav ul.show {
+        display: flex;
+    }
+
+    header nav ul li {
+        margin: 15px 0;
+    }
 }
