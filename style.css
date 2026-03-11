@@ -1,16 +1,94 @@
-/* Small buttons for service links */
-.btn-small {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 6px 15px;
-    background: #007bff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    transition: background 0.3s;
+body{
+font-family:Arial;
+margin:0;
+background:#f4f6f8;
 }
 
-.btn-small:hover {
-    background: #0056b3;
+header{
+background:#0d6efd;
+color:white;
+padding:20px;
+}
+
+.container{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+nav a{
+color:white;
+margin-left:20px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.hero{
+height:500px;
+background:url('images/hero.jpg') center/cover;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+text-align:center;
+}
+
+.hero-text{
+background:rgba(0,0,0,0.5);
+padding:40px;
+border-radius:10px;
+}
+
+.btn{
+background:#ffc107;
+padding:12px 20px;
+text-decoration:none;
+color:black;
+border-radius:5px;
+}
+
+#services{
+padding:60px;
+text-align:center;
+}
+
+.slideshow-container{
+max-width:900px;
+margin:auto;
+}
+
+.slide{
+display:none;
+}
+
+.slide img{
+width:150px;
+margin-bottom:20px;
+}
+
+.fade{
+animation:fade 1s;
+}
+
+@keyframes fade{
+from{opacity:.4}
+to{opacity:1}
+}
+
+#about{
+padding:60px;
+background:white;
+text-align:center;
+}
+
+#contact{
+padding:60px;
+text-align:center;
+}
+
+footer{
+background:#222;
+color:white;
+text-align:center;
+padding:20px;
 }
